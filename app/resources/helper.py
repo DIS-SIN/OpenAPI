@@ -1,5 +1,5 @@
 from flask import make_response, jsonify, url_for
-from app import app
+from app import app, db
 from app.models import Resource
 
 
@@ -46,14 +46,14 @@ def response(status, message, code):
     })), code
 
 
-def get_resources_json_list(resources):
+def get_resources_json_list(all_resources):
     """
     Make json objects of the resources and add them to a list.
     :param resources: resource
     :return:
     """
     resources = []
-    for resource in resources:
+    for resource in all_resources:
         resources.append(resource.json())
     return resources
 

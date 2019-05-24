@@ -60,7 +60,7 @@ class Resource(db.Model):
             'id': self.resource_id,
             'link': self.resource_link,
             'categories': self.resource_categories,
-            'status': self.resource_status.isoformat(),
+            'status': self.resource_status,
             'created_on': self.resource_created_on.isoformat(),
             'modified_on': self.resource_updated_on.isoformat()
         }
