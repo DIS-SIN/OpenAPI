@@ -9,6 +9,12 @@ from sqlalchemy.exc import IntegrityError
 # Initializing the manager
 manager = Manager(app)
 
+# Initialize Flask Migrate
+migrate = Migrate(app, db)
+
+# Add the flask migrate
+manager.add_command('db', MigrateCommand)
+
 # Test coverage configuration
 COV = coverage.coverage(
     branch=True,
